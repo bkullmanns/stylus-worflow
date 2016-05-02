@@ -1,0 +1,101 @@
+/* importando pluguins do stylus usados */
+@import 'jeet'
+@import 'rupture'
+
+/* declarando variáveis do stylus */
+
+$white = #fff
+$blue = #0041b2
+$text-color = #555555
+$bg = #f5f5f5
+
+/* classe .h2-style no início do arquivo para ser usada como um elemento @extend - algo que funciona como 
+chamar uma função em outra parte do código para reutilizá-la */
+
+.h2-style 
+	text-align center 
+	color $text-color
+	margin-top 65px
+	&:after 
+		/* after = elemento do CSS3 para gerar pseudoelementos sem acrescentar tags html 
+			& = caracter que representa o elemento anterior/pai, ou seja, o elemento da identação anterior */
+		content ' '
+		display block
+		width 50px
+		height 2px
+		background-color $text-color
+		margin-left 47%
+		margin-top 3%
+		margin-bottom 4%
+
+
+body
+	margin 0 30px 100px
+	background-color $bg
+	padding 0
+	font-family Verdana, sans-serif
+ 
+.content 
+	center(1200px) 
+	/*centralizando os boxs com o conteudo através do Jeet */
+	
+main 
+	#box /* Aqui é uma funcionalidade do Stylus chamada de Nesting, que é basicamente uma forma mais simples de 
+		representar que um elemento é filho do outro, sem precisar ficar repetindo o elemento 
+		(seria "main", depois "main #box"). Além de não precisar repetir o elemento, o código fica bem fácil a visualização */
+		background-color $bg /*exemplo de uso de variáveis no pre processador */
+		+desktop() 
+			height 100vh 
+			/* vh = Tamanho da tela inteira === 100% */
+		+between(649px, 750px)
+			height 800px
+		+below(648px)
+			height 100vh
+		width 100%
+		h2 
+			@extend .h2-style /* uso da funcionalidade @extend */
+		p 	
+			margin-bottom 8%
+			text-align center
+			line-height 1.5
+			color $text-color 
+		article 
+			column(1/3)
+			/* sistema de posicionamento de elementos / grid do Jeet
+				Na sintaxe do Jeet, column(1/3) ou col(1/3) significa 1 terço do tamanho total do pai do elemento.
+				Nesse caso como está sendo aplicado a tag html article direto, todos os articles pegaram o col(1/3)
+				E cada um será uma coluna de 1 terço do tamanho do pai, fazendo com que os 3 articles fiquem alinhados */
+			box-shadow 0 2px 0 0 rgba(0, 0, 0, 0.1)
+			background-color $white
+			+desktop()
+				height 275px
+				/* O mixin +desktop() é um mixin pronto do 
+					rupture que gera a media query (min-width:1050px), que é um dos tamanhos menores de monitor */
+			h3
+				color $text-color
+				text-align center
+				margin 35px 0
+			p
+				line-height 1.7
+				font-size 13px
+				padding 0 8%
+			img 
+				width 48px
+				height 48px
+				display block
+				margin 0 auto
+				margin-top 8%
+			+below(648px) 
+				/* A tradução literal de below é abaixo de, gera a media query "(max-width: tamanhopx)" */
+				stack() 
+				/* stack() é um mixin do Jeet para posicionar elementos em blocos, ou seja, um em cima do outro */
+				center(300px)	
+				/* center(tamanhopx) é uma mixin de centralização de elementos do Jeet. 
+					Irá centralizar conforme o tamanho do pai. */		
+				margin 0 auto 40px
+			+between(649px, 750px) 
+				height 360px /*"+between(valores)" é a forma do Rupture de criar mediaqueries/breakpoints 
+				de forma mais simples e prática. Esse elemento gera a mediaquery 
+				"(min-width: Tamanhopx) and (max-width: Tamanhopx)". */ 
+			+between(750px, 1049px)
+				height 320px		

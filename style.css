@@ -1,0 +1,168 @@
+/* importando pluguins do stylus usados */
+/* declarando variáveis do stylus */
+/* classe .h2-style no início do arquivo para ser usada como um elemento @extend - algo que funciona como 
+chamar uma função em outra parte do código para reutilizá-la */
+.h2-style,
+main #box h2 {
+  text-align: center;
+  color: #555;
+  margin-top: 65px;
+}
+.h2-style:after,
+main #box h2:after {
+/* after = elemento do CSS3 para gerar pseudoelementos sem acrescentar tags html 
+			& = caracter que representa o elemento anterior/pai, ou seja, o elemento da identação anterior */
+  content: ' ';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #555;
+  margin-left: 47%;
+  margin-top: 3%;
+  margin-bottom: 4%;
+}
+body {
+  margin: 0 30px 100px;
+  background-color: #f5f5f5;
+  padding: 0;
+  font-family: Verdana, sans-serif;
+}
+.content {
+  *zoom: 1;
+  width: auto;
+  max-width: 1200px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+/*centralizando os boxs com o conteudo através do Jeet */
+}
+.content:before,
+.content:after {
+  content: '';
+  display: table;
+}
+.content:after {
+  clear: both;
+}
+main #box {
+  background-color: #f5f5f5 /*exemplo de uso de variáveis no pre processador */;
+  width: 100%;
+}
+@media only screen and (min-width: 1050px) {
+  main #box {
+    height: 100vh;
+  }
+}
+@media only screen and (min-width: 649px) and (max-width: 750px) {
+  main #box {
+    height: 800px;
+  }
+}
+@media only screen and (max-width: 648px) {
+  main #box {
+    height: 100vh;
+  }
+}
+main #box p {
+  margin-bottom: 8%;
+  text-align: center;
+  line-height: 1.5;
+  color: #555;
+}
+main #box article {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 31.33333333333333%;
+  margin-left: 0%;
+  margin-right: 3%;
+/* sistema de posicionamento de elementos / grid do Jeet
+				Na sintaxe do Jeet, column(1/3) ou col(1/3) significa 1 terço do tamanho total do pai do elemento.
+				Nesse caso como está sendo aplicado a tag html article direto, todos os articles pegaram o col(1/3)
+				E cada um será uma coluna de 1 terço do tamanho do pai, fazendo com que os 3 articles fiquem alinhados */
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+main #box article:before,
+main #box article:after {
+  content: '';
+  display: table;
+}
+main #box article:after {
+  clear: both;
+}
+main #box article:last-child {
+  margin-right: 0%;
+}
+@media only screen and (min-width: 1050px) {
+  main #box article {
+    height: 275px;
+  }
+}
+main #box article h3 {
+  color: #555;
+  text-align: center;
+  margin: 35px 0;
+}
+main #box article p {
+  line-height: 1.7;
+  font-size: 13px;
+  padding: 0 8%;
+}
+main #box article img {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 8%;
+}
+@media only screen and (max-width: 648px) {
+  main #box article {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    *zoom: 1;
+    width: auto;
+    max-width: 300px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto 40px;
+  }
+  main #box article:first-child {
+    margin-left: auto;
+  }
+  main #box article:last-child {
+    margin-right: auto;
+  }
+  main #box article:before,
+  main #box article:after {
+    content: '';
+    display: table;
+  }
+  main #box article:after {
+    clear: both;
+  }
+}
+@media only screen and (min-width: 649px) and (max-width: 750px) {
+  main #box article {
+    height: 360px /*"+between(valores)" é a forma do Rupture de criar mediaqueries/breakpoints 
+				de forma mais simples e prática. Esse elemento gera a mediaquery 
+				"(min-width: Tamanhopx) and (max-width: Tamanhopx)". */;
+  }
+}
+@media only screen and (min-width: 750px) and (max-width: 1049px) {
+  main #box article {
+    height: 320px;
+  }
+}

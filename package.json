@@ -1,0 +1,17 @@
+{
+  "name": "projeto-stylus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "watch": "stylus -w style.styl -o style.css --use ./node_modules/jeet --use ./node_modules/rupture"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jeet": "^6.1.2",
+    "rupture": "^0.6.1",
+    "stylus": "^0.54.2"
+  }
+}
