@@ -67,10 +67,10 @@ Exemplos usados no projeto:
   sempre, já que é uma pasta com vários arquivos (mais pesada do projeto, nesse caso).
   
 4. Instalação do Jeet
-  *O comando `npm install -g stylus jeet --save`
+  * O comando `npm install -g stylus jeet --save`
   
 5. Instalação do Rupture
-  *O comando `npm install rupture --save`
+  * O comando `npm install rupture --save`
   
 Essa é uma forma diferente, simples de aprender (e usar) e divertida de desenvolver.
 
