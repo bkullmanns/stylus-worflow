@@ -74,6 +74,14 @@ Exemplos usados no projeto:
   
 Essa é uma forma diferente, simples de aprender (e usar) e divertida de desenvolver.
 
+Materiais consultados pra desenvolver esse projeto: 
+
+https://www.youtube.com/watch?v=eJahtnmywMI&list=PLLnpHn493BHFWQGA1PcyQZWAfR96a4CkH
+http://schempy.com/2015/04/03/responsive_layout_with_stylus_jeet_and_rupture/
+https://github.com/jenius/rupture (documentação)
+http://jeet.gs/ (videos)
+
+
 
   
 
