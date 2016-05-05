@@ -35,7 +35,7 @@ Porque o Stylus possui 3 benefícios sobre o LESS e o SASS:
 
 O **Jeet** é um sistema de grids extremamente simples, fácil de aprender, leve e modular, ou seja,
 você faz o seu grid. Você alinha cada elemento conforme a sua necessidade.
-O Jeet inicialmente foi desenvolvido como pluguin apenas para o Sylus, mas hoje ele possui uma versão para SASS também.
+O Jeet inicialmente foi desenvolvido como plugin apenas para o Sylus, mas hoje ele possui uma versão para SASS também.
 
 Exemplos utilizados no projeto:
   * `stack()` = empilha os elementos em blocos, usado no responsivo.
@@ -55,19 +55,19 @@ Exemplos usados no projeto:
   * Pelo link https://nodejs.org/en/
   
 2. No terminal, usar o comando `npm init`
-  * Esse comando cria o arquivo `package.json`, que é responsável pela gerência das dependências (pluguins - Rupture, Jeet) 
+  * Esse comando cria o arquivo `package.json`, que é responsável pela gerência das dependências (plugins - Rupture, Jeet) 
   e onde é criado o script `watch`, que compila o arquivo `.styl`.
   
 3. Instalação do Stylus
-  *No terminal usar o comando: `npm install stylus -g --save`
-  O `--save` é o comando para que o NPM liste o pluguin instalado nas dependências do `package.json`. 
+  *No terminal usar o comando: `npm install stylu --save`
+  O `--save` é o comando para que o NPM liste o plugin instalado nas dependências do `package.json`. 
   Por que isso é útil? Nos arquivos aqui listados não possui a pasta node_modules, onde ficam as dependências. Essa pasta, contendo 
-  os pluguins instalados é criada a partir das dependências listadas no arquivo `package.json`.
+  os plugins instalados é criada a partir das dependências listadas no arquivo `package.json`.
   pelo comando `npm i`, como instruído a fazer no início desse documento. Isso é útil para não precisar subir a pasta node_modules 
   sempre, já que é uma pasta com vários arquivos (mais pesada do projeto, nesse caso).
   
 4. Instalação do Jeet
-  * O comando `npm install -g stylus jeet --save`
+  * O comando `npm install jeet --save`
   
 5. Instalação do Rupture
   * O comando `npm install rupture --save`
